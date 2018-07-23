@@ -7,7 +7,6 @@ const startTime = Date.now();
 
 const abc = fs.createWriteStream(output);
 fs.createReadStream(fileBig)
-  // .pipe(crypto.createCipher('aes192', 'a_secret'))
   .pipe(abc)
   .on("finish", () => {
     const end = Date.now() - startTime;
